@@ -6,4 +6,9 @@ defmodule Mango.Catalog do
     product2 = %Product{name: "Apple", price: 100, is_seasonal: true}
     [product1, product2]
   end
+
+  def list_seasonal_products do
+    list_products()
+    |> Enum.filter(fn product -> product.is_seasonal == true end)
+  end
 end
