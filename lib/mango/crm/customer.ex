@@ -6,6 +6,7 @@ defmodule Mango.CRM.Customer do
     field :email, :string
     field :name, :string
     field :password, :string, virtual: true
+    field :password_hash, :string
     field :phone, :string
     field :residence_area, :string
 
