@@ -7,7 +7,7 @@ defmodule MangoWeb.Acceptance.RegistrationTest do
   test "registers an account with valid data" do
     navigate_to("/register")
 
-    form = find_element(:id, ".registration-form")
+    form = find_element(:id, "registration-form")
 
     find_within_element(form, :name, "registration[name]")
     |> fill_field("John")
@@ -41,7 +41,7 @@ defmodule MangoWeb.Acceptance.RegistrationTest do
     find_within_element(form, :tag, "button") |> click()
 
     assert current_path() == "/register"
-    message = find_element(:class, "form-error") |> visible_text()
+    message = find_element(:id, "form-error") |> visible_text()
     assert message == "Oops, something went wrong! Please check the errors below."
   end
 end
