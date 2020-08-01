@@ -7,6 +7,16 @@ defmodule MangoWeb.RegistrationController do
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"registration" => registration_data}) do
+  def create(conn, %{"registration" => registration_params}) do
+    case CRM.create_customer(registration_params) do
+      {:ok, _} ->
+        conn
+        |> put_flash(:info, "Registration successful")
+        |> redirect(to: Routes.page_path(conn, :index))
+
+      {:error, changeset} ->
+        conn
+        |> render("new.html", changeset: changeset)
+    end
   end
 end
