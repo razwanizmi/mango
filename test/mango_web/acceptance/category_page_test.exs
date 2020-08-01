@@ -24,7 +24,7 @@ defmodule MangoWeb.Acceptance.CategoryPageTest do
     # And I expect Apple in the product displayed
     product = find_element(:css, ".product")
     product_name = find_within_element(product, :css, ".product-name") |> visible_text()
-    product_price = find_within_element(product, :css, "product-price") |> visible_text()
+    product_price = find_within_element(product, :css, ".product-price") |> visible_text()
 
     assert product_name == "Apple"
     # And I expect its price to be displayed on screen
@@ -47,7 +47,7 @@ defmodule MangoWeb.Acceptance.CategoryPageTest do
     # And I expect Tomato in the product displayed
     product = find_element(:css, ".product")
     product_name = find_within_element(product, :css, ".product-name") |> visible_text()
-    product_price = find_within_element(product, :css, "product-price") |> visible_text()
+    product_price = find_within_element(product, :css, ".product-price") |> visible_text()
 
     assert product_name == "Tomato"
     # And I expect its price to be displayed on screen
