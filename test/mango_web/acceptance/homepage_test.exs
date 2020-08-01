@@ -1,4 +1,4 @@
-defmodule MangoWeb.HomepageTest do
+defmodule MangoWeb.Acceptance.HomepageTest do
   use Mango.DataCase
   use Hound.Helpers
 
