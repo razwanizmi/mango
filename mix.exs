@@ -46,7 +46,8 @@ defmodule Mango.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:hound, "~> 1.1"},
-      {:nimble_csv, "~> 0.7.0"}
+      {:nimble_csv, "~> 0.7.0"},
+      {:pbkdf2_elixir, "~> 1.2"}
     ]
   end
 
