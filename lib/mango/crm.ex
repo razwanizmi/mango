@@ -14,4 +14,17 @@ defmodule Mango.CRM do
   end
 
   def get_customer_by_email(email), do: Repo.get_by(Customer, email: email)
+
+  def get_customer_by_credentials(%{"email" => email, "password" => pass}) do
+    customer = get_customer_by_email(email)
+
+    cond do
+      customer && Pbkdf2.verify_pass(pass, customer.password_hash) ->
+        customer
+
+      true ->
+        Pbkdf2.no_user_verify()
+        :error
+    end
+  end
 end
