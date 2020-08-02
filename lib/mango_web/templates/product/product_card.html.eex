@@ -2,17 +2,15 @@
   <div class="caption">
     <span class="text-muted pull-right"><%= @product.pack_size %></span>
     <h2>
-      <div class="product-name"><%= @product.name %></div>
-      <span class="pull-right">
-        <small>MYR <span class="product-price"><%= @product.price %></span></small>
+      <span class="product-name"><%= @product.name %></span>
+      <span class="pull-right price">
+        <small class="price">
+          MYR <span class="product-price"><%= @product.price %></span>
+        </small>
       </span>
     </h2>
     <hr />
-    <%= form_for @conn, "/cart", [as: :cart], fn f -> %>
-      <%= hidden_input f, :product_id, value: @product.id %>
-      <%= number_input f, :quantity, value: 1 %>
-      <%= submit "Add to Cart" %>
-    <% end %>
+    <%= render "cart_form.html", conn: @conn, product: @product %>
   </div>
   <img src="<%= @product.image %>" />
 </div>

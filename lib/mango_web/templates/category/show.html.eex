@@ -1,7 +1,7 @@
 <h1 class="page-title"><%= title_case(@name) %></h1>
 <div class="row">
   <%= for product <- @products do %>
-    <div class="col-md-4">
+    <div class="col-sm-4 col-md-4 col-lg-3">
       <%= render(MangoWeb.ProductView, "product_card.html", conn: @conn, product: product) %>
     </div>
   <% end %>
