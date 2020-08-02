@@ -17,7 +17,7 @@ defmodule MangoWeb.Acceptance.SessionTest do
       "phone" => "1111"
     }
 
-    {:ok, customer} = CRM.create_customer(valid_attrs)
+    {:ok, _customer} = CRM.create_customer(valid_attrs)
     :ok
   end
 
