@@ -6,7 +6,7 @@ defmodule MangoWeb.Plug.FetchCartTest do
     conn = get(build_conn(), "/")
 
     cart_id = get_session(conn, :cart_id)
-    assert %Order{status: "In Cart"} == conn.assigns.cart
+    assert %Order{status: "In Cart"} = conn.assigns.cart
     assert cart_id == conn.assigns.cart.id
   end
 
@@ -19,6 +19,6 @@ defmodule MangoWeb.Plug.FetchCartTest do
 
     # Second visit
     conn = get(conn, "/")
-    assert conn.assigns.cart_id == cart_id
+    assert cart_id == conn.assigns.cart.id
   end
 end
