@@ -9,7 +9,7 @@ function ajaxHandler(e) {
       type: "info",
     });
 
-    $("cart-count").text(resp.cart_count);
+    $(".cart-count").text(resp.cart_count);
   });
 }
 
