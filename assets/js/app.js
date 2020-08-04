@@ -14,3 +14,6 @@ import "../css/app.scss";
 //
 import "bootstrap";
 import "phoenix_html";
+
+import ajaxCart from "./ajax_cart";
+ajaxCart.init();
