@@ -39,6 +39,7 @@
       <div class="form-group">
         <%= submit "Update Cart", class: "btn btn-primary" %>
       </div>
+      <%= link "Check Out", to: Routes.checkout_path(@conn, :edit), class: "btn btn-primary pull-right" %>
     <% end %>
   <% end %>
 </div>
