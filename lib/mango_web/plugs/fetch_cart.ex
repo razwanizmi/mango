@@ -5,7 +5,7 @@ defmodule MangoWeb.Plugs.FetchCart do
 
   def init(_opts), do: nil
 
-  def call(conn, _) do
+  def call(conn, _opts) do
     with cart_id <- get_session(conn, :cart_id),
          true <- is_integer(cart_id),
          %Order{} = cart <- Sales.get_cart(cart_id) do
