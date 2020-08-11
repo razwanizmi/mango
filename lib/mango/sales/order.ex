@@ -4,9 +4,14 @@ defmodule Mango.Sales.Order do
   alias Mango.Sales.{Order, LineItem}
 
   schema "orders" do
+    embeds_many :line_items, LineItem, on_replace: :delete
+    field :comments, :string
+    field :customer_id, :integer
+    field :customer_name, :string
+    field :email, :string
+    field :residence_area, :string
     field :status, :string
     field :total, :decimal
-    embeds_many :line_items, LineItem, on_replace: :delete
 
     timestamps()
   end
